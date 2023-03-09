@@ -1,5 +1,7 @@
-const express = require("express");
+require('dotenv').config();
+console.log(process.env);
 
+const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -21,7 +23,8 @@ app.use(routes);
 
 // Connect to the Mongo DB
 // const uri = process.env.MONGODB_URI || "mongodb://localhost/shame_db";
-const uri = process.env.MONGODB_URI
+const uri = process.env.MONGODB_URI;
+console.log("uri = ", uri); // this is undefined for some reason
 
 mongoose.connect(uri, {
     // useFindAndModify: false,
