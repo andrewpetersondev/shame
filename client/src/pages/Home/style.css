@@ -1,6 +1,7 @@
 .rowAbout{
     margin-left: 50px;
-    background-image: url("/images/crumplyBG.png");
+    /* background-image: url("/images/crumplyBG.png"); */
+    background-image: url("../../../public/images/crumplyBG.png");
     margin:0;
     align-content:center;
 }
@@ -102,6 +103,7 @@ height: 13em;
 
 .getStartedRow{
     margin:0;
-    background-image: url("/images/letsGetStartedBG.jpg");
+    /* background-image: url("/images/letsGetStartedBG.jpg"); */
+    background-image: url("../../../public/images/letsGetStartedBG.jpg");
     text-align:center;
 }
