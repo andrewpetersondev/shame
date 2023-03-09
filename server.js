@@ -24,9 +24,9 @@ app.use(routes);
 const uri = process.env.MONGODB_URI
 
 mongoose.connect(uri, {
-    useFindAndModify: false,
+    // useFindAndModify: false,
     useNewUrlParser: true,
-    useCreateIndex: true,
+    // useCreateIndex: true,
     useUnifiedTopology: true
 });
 
