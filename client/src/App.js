@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // import components that appear on every page
 import Navbar from "./components/Navbar";
@@ -602,7 +602,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <div>
                     <Navbar
                         isAuthenticated={this.state.isAuthenticated}
@@ -718,7 +718,7 @@ class App extends React.Component {
                         <Route component={Error404} />
                     </Routes>
                 </div>
-            </Router>
+            </BrowserRouter>
         );
     }
 }
