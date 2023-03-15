@@ -620,9 +620,8 @@ class App extends React.Component {
                         handleLoginClose={this.loginClose}
                         message={this.state.loginMessage}
                     />
-                    <Routes>
+                    {/* <Routes>
                         <Route
-                            exact
                             path='/'
                             render={(props) => <Home {...props}
                                 categories={this.state.categories}
@@ -630,7 +629,6 @@ class App extends React.Component {
                             />}
                         />
                         <Route
-                            exact
                             path='/register'
                             render={(props) => <Register {...props}
                                 firstName={this.state.firstName}
@@ -644,7 +642,6 @@ class App extends React.Component {
                         />
 
                         <Route
-                            exact
                             path='/addgoal'
                             render={(props) => <AddGoal {...props}
                                 categoryId={this.state.categoryId}
@@ -666,7 +663,6 @@ class App extends React.Component {
                             />}
                         />
                         <Route
-                            exact
                             path="/manage"
                             render={(props) => <Manage {...props}
                                 handleOnChange={this.handleOnChange}
@@ -681,7 +677,6 @@ class App extends React.Component {
                         />
 
                         <Route
-                            exact
                             path='/progress'
                             render={(props) => <Progress {...props}
                                 visualizerDates={this.state.visualizerDates}
@@ -693,7 +688,6 @@ class App extends React.Component {
                         />
 
                         <Route
-                            exact
                             path='/admin'
                             render={(props) => <Admin {...props}
                                 categoryId={this.state.categoryId}
@@ -716,7 +710,116 @@ class App extends React.Component {
                             />}
                         />
                         <Route component={Error404} />
+                    </Routes> */}
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <Home
+                                    categories={this.state.categories}
+                                    getCategoryMatch={this.getCategoryMatch}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="/register"
+                            element={
+                                <Register
+                                    firstName={this.state.firstName}
+                                    lastName={this.state.lastName}
+                                    email={this.state.email}
+                                    password={this.state.password}
+                                    handleOnChange={this.handleOnChange}
+                                    setUserSession={this.setUserSession}
+                                    loginClose={this.loginClose}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="/addgoal"
+                            element={
+                                <AddGoal
+                                    categoryId={this.state.categoryId}
+                                    selectedCategory={this.state.selectedCategory}
+                                    handleOnChange={this.handleOnChange}
+                                    getCategories={this.getCategories}
+                                    categories={this.state.categories}
+                                    goals={this.state.goals}
+                                    selectGoal={this.selectGoal}
+                                    showTaskOverlay={this.state.showTaskOverlay}
+                                    selectedGoal={this.state.selectedGoal}
+                                    tasks={this.state.tasks}
+                                    getCategoryMatch={this.getCategoryMatch}
+                                    getGoalsInCategory={this.getGoalsInCategory}
+                                    taskOverlayClose={this.taskOverlayClose}
+                                    handleAddGoalFormSubmit={this.handleAddGoalFormSubmit}
+                                    showOkDialog={this.state.showOkDialog}
+                                    clearCategory={this.clearCategory}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="/manage"
+                            element={
+                                <Manage
+                                    handleOnChange={this.handleOnChange}
+                                    userGoals={this.state.visualizerData}
+                                    getUserDetails={this.getUserDetails}
+                                    selectGoal={this.selectGoal}
+                                    showTaskOverlay={this.state.showTaskOverlay}
+                                    selectedGoal={this.state.selectedGoal}
+                                    tasks={this.state.tasks}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="/progress"
+                            element={
+                                <Progress
+                                    visualizerDates={this.state.visualizerDates}
+                                    visualizerData={this.state.visualizerData}
+                                    changeVisualizerDates={this.changeVisualizerDates}
+                                    handleCompleteTask={this.handleCompleteTask}
+                                    handleIncompleteTask={this.handleIncompleteTask}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/admin"
+                            element={
+                                <Admin
+                                    categoryId={this.state.categoryId}
+                                    categoryName={this.state.categoryName}
+                                    categoryTagLine={this.state.categoryTagLine}
+                                    categoryImgSrc={this.state.categoryImgSrc}
+                                    categories={this.state.categories}
+                                    getCategories={this.getCategories}
+                                    goalId={this.state.goalId}
+                                    goals={this.state.goals}
+                                    getGoalsInCategory={this.getGoalsInCategory}
+                                    handleOnChange={this.handleOnChange}
+                                    handleCategoryFormSubmit={this.handleCategoryFormSubmit}
+                                    handleGoalFormSubmit={this.handleGoalFormSubmit}
+                                    taskName={this.state.taskName}
+                                    tasks={this.state.tasks}
+                                    streakTarget={this.state.streakTarget}
+                                    totalTarget={this.state.totalTarget}
+                                    handleTaskFormSubmit={this.handleTaskFormSubmit}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="*"
+                            element={<Error404 />}
+                        />
+
                     </Routes>
+
                 </div>
             </BrowserRouter>
         );
