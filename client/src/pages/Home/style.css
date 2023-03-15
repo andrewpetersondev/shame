@@ -1,7 +1,8 @@
 .rowAbout{
     margin-left: 50px;
     /* background-image: url("/images/crumplyBG.png"); */
-    background-image: url("../../../public/images/crumplyBG.png");
+    /* background-image: url("../../../public/images/crumplyBG.png"); */
+    background-color: #c06809;
     margin:0;
     align-content:center;
 }
